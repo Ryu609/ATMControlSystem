@@ -11,8 +11,8 @@ namespace ATMControlSystem.Lists
         public readonly List<AccountModel> List = new List<AccountModel>();
         public CardHolder()
         {
-            List.Add(new AccountModel { AccNumber = "m.joynauth@gmail.com", Password = "$M4ryu6969+1-1" });
-
+            List.Add(new AccountModel { AccNumber = "m.joynauth@gmail.com", Password = "test456789" });
+            List.Add(new AccountModel { AccNumber = "test@ymail.com", Password = "test1234" });
         }
     }
 }
