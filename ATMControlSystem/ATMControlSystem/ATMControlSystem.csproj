@@ -957,6 +957,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Controllers\" />
+    <Folder Include="Scripts\Factories\" />
     <Folder Include="Utilities\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Withdrawal\" />
