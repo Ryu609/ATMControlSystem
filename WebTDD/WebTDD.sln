@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTDD", "WebTDD\WebTDD.csproj", "{C5513DA5-5EF9-4A4A-8770-B09FBFFCF2D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebTDD.Tests", "WebTDD.Tests\WebTDD.Tests.csproj", "{E379D1D5-8C63-41F0-AC2E-F5BCC66C24CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5513DA5-5EF9-4A4A-8770-B09FBFFCF2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5513DA5-5EF9-4A4A-8770-B09FBFFCF2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5513DA5-5EF9-4A4A-8770-B09FBFFCF2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5513DA5-5EF9-4A4A-8770-B09FBFFCF2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E379D1D5-8C63-41F0-AC2E-F5BCC66C24CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E379D1D5-8C63-41F0-AC2E-F5BCC66C24CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E379D1D5-8C63-41F0-AC2E-F5BCC66C24CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E379D1D5-8C63-41F0-AC2E-F5BCC66C24CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

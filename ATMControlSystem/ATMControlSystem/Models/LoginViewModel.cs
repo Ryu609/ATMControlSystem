@@ -6,12 +6,11 @@ using System.Web;
 
 namespace ATMControlSystem.Models
 {
-    public class AccountModel
+    public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Acount Number")]
-        [EmailAddress]
-        public string AccNumber { get; set; }
+        [Display(Name = "Account Number")]        
+        public int AccNumber { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -19,5 +18,9 @@ namespace ATMControlSystem.Models
         public string Password { get; set; }
 
         
+        [Display(Name = "Balance")]
+        public int Balance { get; set; }
+
+
     }
 }

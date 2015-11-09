@@ -130,13 +130,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Lists\CardHolder.cs" />
-    <Compile Include="Lists\ReportedCard.cs" />
-    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Lists\CardDetail.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\CardModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BankingService.svc.cs">
       <DependentUpon>BankingService.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\IBankingService.cs" />
+    <Compile Include="Utilities\WithdrawUtils.cs" />
+    <Compile Include="Utilities\LoginUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -958,7 +961,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\Controllers\" />
     <Folder Include="Scripts\Factories\" />
-    <Folder Include="Utilities\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Withdrawal\" />
   </ItemGroup>

@@ -8,11 +8,11 @@ namespace ATMControlSystem.Lists
 {
     public class CardHolder
     {
-        public readonly List<AccountModel> List = new List<AccountModel>();
+        public readonly List<LoginViewModel> List = new List<LoginViewModel>();
         public CardHolder()
         {
-            List.Add(new AccountModel { AccNumber = "m.joynauth@gmail.com", Password = "test456789" });
-            List.Add(new AccountModel { AccNumber = "test@ymail.com", Password = "test1234" });
+            List.Add(new LoginViewModel { AccNumber = 00000123456, Password = "test456789", Balance = 12500 });
+            List.Add(new LoginViewModel { AccNumber = 00123456789, Password = "test1234", Balance = 594515 });
         }
     }
 }
