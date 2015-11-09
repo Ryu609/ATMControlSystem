@@ -1,5 +1,6 @@
 ﻿using ATMControlSystem.Lists;
 using ATMControlSystem.Models;
+using ATMControlSystem.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,8 @@ namespace ATMControlSystem.Controllers
 
             if (!ModelState.IsValid) return View(model);
 
-
+            if (LoginUtils.IsCardReported(model.AccNumber) == true) return View("ReportedCard");
+            
             var Cardholder = new CardHolder();
 
             if (Cardholder.List.Any(u => u.AccNumber == model.AccNumber && u.Password == model.Password) && count <= 3)
@@ -38,7 +40,7 @@ namespace ATMControlSystem.Controllers
             }
             else
             {
-                if (count >= 3) return View("ForgotPassword");
+                if (count >= 3) return View("LoginFail");
 
                 count++;
                 return View();

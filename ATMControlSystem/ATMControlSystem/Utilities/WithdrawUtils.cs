@@ -9,7 +9,7 @@ namespace ATMControlSystem.Utilities
 {
     public static class WithdrawUtils
     {
-
+        //Update Balance 
         private static void UpdateBalance(int accountNum, int amount)
         {
             CardHolder cardHolder = new CardHolder();
@@ -20,6 +20,7 @@ namespace ATMControlSystem.Utilities
 
         }
 
+        //Verifies account balance
         public static bool CheckBalance(int accountNum, int amount)
         {
             CardHolder cardHolder = new CardHolder();
@@ -29,17 +30,49 @@ namespace ATMControlSystem.Utilities
             return false;
         }
 
-        public static bool IsCardReported(int cardNum)
+        // Performs the withdrawal
+        public static void Dispense(int accountNum, int amount)
         {
-            CardDetail cardDetails = new CardDetail();
+            int thousand = 0, fiveHundred = 0, twoHundred = 0, hundred = 0, fifty = 0, twenty = 0;
 
-            return cardDetails.List.Any(s => s.CardNumber == cardNum && s.Reported == true);
-        }
+            if (amount >= 1000)
+            {
+                thousand = amount / 1000;
+                amount %= 1000;
+            }
+            if (amount >= 500 && amount < 1000)
+            {
+                fiveHundred = amount / 500;
+                amount %= 500;
+            }
 
-        public static void Dispense(int thousand, int fiveHundred, int twoHundred, int hundred, int fifty, int twenty ,int accountNum, int amount)
-        {
+            if (amount >= 200 && amount < 500)
+            {
+                twoHundred = amount / 200;
+                amount %= 200;
+            }
+
+            if (amount >= 100 && amount < 200)
+            {
+                hundred = amount / 100;
+                amount %= 100;
+            }
+
+            if (amount >= 50 && amount < 100)
+            {
+                fifty = amount / 50;
+                amount %= 50;
+            }
+
+            if (amount >= 20 && amount < 50)
+            {
+                twenty = amount / 20;
+                amount %= 20;
+            }
+            //Update Balance
             UpdateBalance(accountNum, amount);
 
+            //Displays notes dispense in output window
             Debug.Print("You will receive " + thousand + " Thousand notes + ");
             Debug.Print(fiveHundred + " Five hundred notes +");
             Debug.Print(twoHundred + " Two hundred notes +");
