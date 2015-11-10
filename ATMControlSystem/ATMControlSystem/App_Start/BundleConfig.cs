@@ -9,10 +9,12 @@ namespace ATMControlSystem
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                        "~/Scripts/angular.min.js"));
+                        "~/Scripts/angular.min.js",
+                        "~/Scripts/angular-route.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/AngularApp")
+            bundles.Add(new ScriptBundle("~/bundles/angularApp")
                 .IncludeDirectory("~/Scripts/Controllers", "*.js")
+                .IncludeDirectory("~/Scripts/Factories", "*.js")
                 .Include("~/Scripts/AngularApp.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

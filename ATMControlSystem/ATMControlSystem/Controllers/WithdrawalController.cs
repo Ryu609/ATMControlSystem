@@ -6,10 +6,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ATMControlSystem.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class WithdrawalController : Controller
     {
         public ActionResult Withdraw()
@@ -18,8 +19,10 @@ namespace ATMControlSystem.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Withdraw(int accNum, int amount)
         {
+
             //Verifies if Balance has sufficient fund
             if (WithdrawUtils.CheckBalance(accNum, amount).Equals(true))
             {               
@@ -27,7 +30,8 @@ namespace ATMControlSystem.Controllers
                 WithdrawUtils.Dispense(accNum,amount);              
 
             }
-
+            FormsAuthentication.SignOut();
+            
             return View();      
         }
     }
