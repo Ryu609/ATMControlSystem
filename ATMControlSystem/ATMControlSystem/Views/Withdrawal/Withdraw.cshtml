@@ -1,0 +1,40 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal" ng-submit="withdraw()">
+            <div class="form-horizontal">
+                <label class="col-md-2 control-label" for="AccNum">Account Number:</label>
+                <input class="form-control" type="text" ng-model="withdrawForm.accNum" id="AccNum" /><br>
+
+                <div class="col-sm-12">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-default btn-custom">
+                            <input type="radio" value="20" ng-model="withdrawForm.amount" /> 20
+                        </label>
+                        <label class="btn btn-default btn-custom">
+                            <input type="radio" value="50" ng-model="withdrawForm.amount" /> 50
+                        </label>
+                        <label class="btn btn-default btn-custom">
+                            <input type="radio" value="100" ng-model="withdrawForm.amount" /> 100
+                        </label>
+                        <label class="btn btn-default btn-custom">
+                            <input type="radio" value="200" ng-model="withdrawForm.amount" /> 200
+                        </label>
+                        <label class="btn btn-default btn-custom">
+                            <input type="radio" value="500" ng-model="withdrawForm.amount" /> 500
+                        </label>
+                        <label class="btn btn-default btn-custom">
+                            <input type="radio" value="1000" ng-model="withdrawForm.amount" /> 1000
+                        </label>
+                    </div>
+                </div><br />
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <button class="btn btn-default btn-lg" type="submit">Retrieve</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</div>

@@ -1,4 +1,44 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html ng-app="AngularApp">
+<head>
+    <title></title>
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    
+</head>
+<body>
 
+    
+    <nav class="navbar navbar-default">
+        <nav class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/#/withdraw">Withdraw <span class="sr-only">(current)</span></a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+    </nav>
+
+    <div ng-view></div>
+
+    
+
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/angularApp")
+
+</body>
+</html>
