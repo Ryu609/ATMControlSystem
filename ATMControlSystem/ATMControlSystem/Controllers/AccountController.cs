@@ -41,13 +41,13 @@ namespace ATMControlSystem.Controllers
                 FormsAuthentication.SetAuthCookie(model.AccNumber.ToString(), true);
                 return RedirectToAction("Index", "Home");
             }
-            else
-            {
+            
+            
                 if (count >= 3) return View("LoginFail");
 
                 count++;
                 return View();
-            }
+            
 
 
         }

@@ -10,7 +10,7 @@ namespace ATMControlSystem.Utilities
     {
         public static bool IsCardReported(int cardNum)
         {
-            CardDetail cardDetails = new CardDetail();
+            var cardDetails = new CardDetail();
 
             return cardDetails.List.Any(s => s.CardNumber == cardNum && s.Reported == true);
         }

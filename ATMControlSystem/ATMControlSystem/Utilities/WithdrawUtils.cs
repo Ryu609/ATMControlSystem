@@ -8,28 +8,11 @@ using System.Web;
 namespace ATMControlSystem.Utilities
 {
     public static class WithdrawUtils
-    {
-        //Update Balance 
-        private static void UpdateBalance(int accountNum, int amount)
-        {
-            CardHolder cardHolder = new CardHolder();
-
-            var user = cardHolder.List.Find(s => s.AccNumber == accountNum);
-
-            Debug.Print("*****************************************");
-            Debug.Print("Old Balance: " + user.Balance.ToString());
-
-            user.Balance  -= amount;
-           
-            Debug.Print("Amount withdrawn: " + amount);
-            Debug.Print("New Balance: " + user.Balance.ToString());
-            Debug.Print("*****************************************");
-        }
-
+    {        
         //Verifies account balance
         public static bool CheckBalance(int accountNum, int amount)
         {
-            CardHolder cardHolder = new CardHolder();
+            var cardHolder = new CardHolder();
 
             if (cardHolder.List.Any(s => s.AccNumber == accountNum && s.Balance >= amount)) return true;
 
@@ -37,8 +20,11 @@ namespace ATMControlSystem.Utilities
         }
 
         // Performs the withdrawal
-        public static void Dispense(int accountNum, int amount)
+        public static bool Dispense(int accountNum, int amount)
         {
+            //Update Balance
+            var cardHolder = new CardHolder();
+
             if (amount % 10 == 0)
             {
                 var remainder = amount;
@@ -77,9 +63,18 @@ namespace ATMControlSystem.Utilities
                 {
                     twenty = remainder / 20;
                     remainder %= 20;
-                }
-                //Update Balance
-                UpdateBalance(accountNum, amount);
+                }               
+
+                var user = cardHolder.List.Find(s => s.AccNumber == accountNum);
+
+                Debug.Print("*****************************************");
+                Debug.Print("Old Balance: " + user.Balance.ToString());
+
+                user.Balance -= amount;
+
+                Debug.Print("Amount withdrawn: " + amount);
+                Debug.Print("New Balance: " + user.Balance.ToString());
+                Debug.Print("*****************************************");
 
                 //Displays notes dispense in output window
                 Debug.Print("*****************************************");
@@ -91,8 +86,11 @@ namespace ATMControlSystem.Utilities
                 Debug.Print(twenty + " Twenty notes +");
                 Debug.Print("*****************************************");
 
+                return true;
             }
+            return false;
         }
+
 
 
     }

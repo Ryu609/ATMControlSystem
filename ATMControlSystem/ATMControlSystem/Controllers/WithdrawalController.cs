@@ -23,16 +23,12 @@ namespace ATMControlSystem.Controllers
         public ActionResult Withdraw(int accNum, int amount)
         {
 
-            //Verifies if Balance has sufficient fund
-            if (WithdrawUtils.CheckBalance(accNum, amount).Equals(true))
+            //Verifies if Balance has sufficient fund && Calls the dispense method
+            if (WithdrawUtils.CheckBalance(accNum, amount) && WithdrawUtils.Dispense(accNum, amount))
             {
-                //Calls the dispense method
-                WithdrawUtils.Dispense(accNum, amount);
-
-                return View();
-                
+                return View();                
             }
-            else return RedirectToAction("InsufficientFund");
+             return RedirectToAction("InsufficientFund");
             
         }
 
