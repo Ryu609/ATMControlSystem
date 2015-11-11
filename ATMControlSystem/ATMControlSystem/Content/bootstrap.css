@@ -3512,10 +3512,13 @@ fieldset[disabled] .btn-link:focus {
   border-radius: 0;
 }
 .btn-custom {
-    padding: 50px 50px;
+  padding: 50px 50px;
+  margin: 10px 10px 100px 10px;
+  width: 200px;
+  height: 75px;
   font-size: 25px;
   line-height: 1.3333333;
-  border-radius: 0;
+  border-radius: 10px;
 }
 .btn-block {
   display: block;
