@@ -25,14 +25,23 @@ namespace ATMControlSystem.Controllers
 
             //Verifies if Balance has sufficient fund
             if (WithdrawUtils.CheckBalance(accNum, amount).Equals(true))
-            {               
+            {
                 //Calls the dispense method
-                WithdrawUtils.Dispense(accNum,amount);              
+                WithdrawUtils.Dispense(accNum, amount);
 
+                return View();
+                
             }
-            FormsAuthentication.SignOut();
+            else return RedirectToAction("InsufficientFund");
             
-            return View();      
         }
+
+        //Action called if Account has insufficient fund
+        public ActionResult InsufficientFund()
+        {
+            return View();
+        }
+
+       
     }
 }

@@ -11,6 +11,9 @@ var configFunction = function ($routeProvider, $httpProvider) {
             templateUrl: 'withdrawal/withdraw',
             controller: 'WithdrawController'
         })
+        .when('/withdraw/insufficientfund',{
+            templateUrl: 'withdrawal/insufficientfund'
+        })
         
     $httpProvider.interceptors.push('AuthHttpResponseInterceptor');
         

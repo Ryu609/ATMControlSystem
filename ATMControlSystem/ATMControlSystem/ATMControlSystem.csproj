@@ -956,14 +956,15 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Withdrawal\Withdraw.cshtml" />
+    <Content Include="Views\Withdrawal\InsufficientFund.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
