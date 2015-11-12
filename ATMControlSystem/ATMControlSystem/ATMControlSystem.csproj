@@ -960,10 +960,10 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Withdrawal\Withdraw.cshtml" />
     <Content Include="Views\Withdrawal\InsufficientFund.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

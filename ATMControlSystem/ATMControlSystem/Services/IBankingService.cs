@@ -12,6 +12,25 @@ namespace ATMControlSystem.Services
     public interface IBankingService
     {
         [OperationContract]
-        void DoWork();
+        bool CardReader(LoginModel model);
+
+        [OperationContract]
+        void Dispense(int accNumber, int amount);
+
+        [OperationContract]
+        void Print(int accNumber, int oldBalance, int newBalance);
+        
     }
+
+    [DataContract]
+    public class LoginModel
+    {
+        [DataMember]
+        public int AccNumber { get; set; }
+        [DataMember]
+        public int Password { get; set; }
+
+    }
+
+
 }

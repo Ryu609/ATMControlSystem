@@ -38,17 +38,15 @@ namespace ATMControlSystem.Controllers
 
             if (Cardholder.List.Any(u => u.AccNumber == model.AccNumber && u.Password == model.Password) && count <= 3)
             {
-                FormsAuthentication.SetAuthCookie(model.AccNumber.ToString(), true);
-                return RedirectToAction("Index", "Home");
-            }
-            
+                Session["AccNumber"] = model.AccNumber;
+                Session.Timeout = 10;
+                return RedirectToAction("Index","Home");               
+            }       
             
                 if (count >= 3) return View("LoginFail");
 
                 count++;
-                return View();
-            
-
+                return View();          
 
         }
     }
