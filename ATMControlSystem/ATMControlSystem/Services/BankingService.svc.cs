@@ -11,8 +11,19 @@ namespace ATMControlSystem.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select BankingService.svc or BankingService.svc.cs at the Solution Explorer and start debugging.
     public class BankingService : IBankingService
     {
-        public void DoWork()
+        public bool CardReader(LoginModel model)
         {
+            throw new NotImplementedException();
+        }
+
+        public void Dispense(int accNumber, int amount)
+        {
+            throw new NotImplementedException();
+        }        
+
+        public void Print(int accNumber, int oldBalance, int newBalance)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -23,15 +23,17 @@ namespace ATMControlSystem.Controllers
         }
         
 
+        //POST: Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model)
         {
             
-
+            //Verifies modelstate
             if (!ModelState.IsValid) return View(model);
 
+            //Verifies if card is reported
             if (LoginUtils.IsCardReported(model.AccNumber) == true) return View("ReportedCard");
             
             var Cardholder = new CardHolder();
@@ -42,7 +44,7 @@ namespace ATMControlSystem.Controllers
                 Session.Timeout = 10;
                 return RedirectToAction("Index","Home");               
             }       
-            
+            //number of login trials after failure is limited to 3 
                 if (count >= 3) return View("LoginFail");
 
                 count++;

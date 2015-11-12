@@ -10,7 +10,7 @@
         
         var result = WithdrawFactory($scope.withdrawForm.accNum, $scope.withdrawForm.amount);
         result.then(function (result) {
-            debugger;
+            
             if (result.success) {
                 if ($scope.withdrawForm.returnUrl !== undefined) {
                     $location.path('/Withdraw');

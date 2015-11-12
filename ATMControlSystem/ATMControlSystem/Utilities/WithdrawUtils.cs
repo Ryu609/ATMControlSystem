@@ -25,6 +25,7 @@ namespace ATMControlSystem.Utilities
             //Update Balance
             var cardHolder = new CardHolder();
 
+            //Verifies if amount is exactly divisible by 10
             if (amount % 10 == 0)
             {
                 var remainder = amount;
@@ -66,22 +67,24 @@ namespace ATMControlSystem.Utilities
                 }               
 
                 var user = cardHolder.List.Find(s => s.AccNumber == accountNum);
-
+                //Displays Old Balance in output window
                 Debug.Print("*****************************************");
                 Debug.Print("Old Balance: " + user.Balance.ToString());
 
                 user.Balance -= amount;
-
+                //Displays Amount retrieved in output window
                 Debug.Print("Amount withdrawn: " + amount);
+                //Displays New Balance in output window
                 Debug.Print("New Balance: " + user.Balance.ToString());
                 Debug.Print("*****************************************");
 
                 //Displays notes dispense in output window
                 Debug.Print("*****************************************");
-                Debug.Print("You will receive " + thousand + " Thousand notes + ");
+                Debug.Print("You will receive: ");
+                Debug.Print(thousand + " Thousand notes  +");
                 Debug.Print(fiveHundred + " Five hundred notes +");
                 Debug.Print(twoHundred + " Two hundred notes +");
-                Debug.Print(hundred + " Five hundred notes +");
+                Debug.Print(hundred + " One hundred notes +");
                 Debug.Print(fifty + " Fifty notes +");
                 Debug.Print(twenty + " Twenty notes +");
                 Debug.Print("*****************************************");

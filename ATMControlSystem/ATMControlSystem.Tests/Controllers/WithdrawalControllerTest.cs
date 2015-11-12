@@ -31,11 +31,12 @@ namespace ATMControlSystem.Tests.Controllers
             // Arrange
             WithdrawalController controller = new WithdrawalController();
 
-            // Act
-            ViewResult result = controller.Withdraw(00000123456,500) as ViewResult;
+            var expectedResult = false;
+            var actualResult = controller.Withdraw(00123456789, 1000);
+
 
             // Assert
-            Assert.IsNotNull(result);
+            Assert.AreEqual<bool>(expectedResult, actualResult);
         }
 
     }

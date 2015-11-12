@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -20,15 +21,15 @@ namespace ATMControlSystem.Controllers
         }
 
         [HttpPost]
-        public ActionResult Withdraw(int accNum, int amount)
+        public bool Withdraw(int accNum, int amount)
         {
-
+           
             //Verifies if Balance has sufficient fund && Calls the dispense method
             if (WithdrawUtils.CheckBalance(accNum, amount) && WithdrawUtils.Dispense(accNum, amount))
             {
-                return View();                
+                return true;                
             }
-             return RedirectToAction("InsufficientFund");
+             return false;
             
         }
 
